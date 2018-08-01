@@ -1,5 +1,5 @@
 // @flow
-import styled from "styled-components";
+import styled from "react-emotion";
 
 const InlineCode = styled.code.attrs({
   spellCheck: false,
