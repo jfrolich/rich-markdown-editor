@@ -1,8 +1,8 @@
 {
   "presets": ["react", "flow", "env"],
   "plugins": [
-    "lodash",
     ["emotion", { "hoist": true }],
+    "lodash",
     "transform-decorators-legacy",
     "transform-es2015-destructuring",
     "transform-object-rest-spread",
