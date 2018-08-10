@@ -1,5 +1,5 @@
 {
-  "name": "@jaapfrolich/rich-markdown-editor",
+  "name": "@jfrolich/rich-markdown-editor",
   "description": "A rich text editor with Markdown shortcuts built on Slate",
   "version": "3.1.2",
   "main": "lib/index.js",
