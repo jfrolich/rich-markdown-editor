@@ -13,6 +13,7 @@ import {
   LinkIcon,
   StrikethroughIcon,
 } from "outline-icons";
+import type { Mark, Block } from "../../types";
 import ToolbarButton from "./ToolbarButton";
 
 type Props = {
@@ -83,7 +84,16 @@ class FormattingToolbar extends React.Component<Props> {
     });
   };
 
-  renderMarkButton = (type: string, IconClass: Function) => {
+  renderMarkButton = (type: Mark, IconClass: Function) => {
+    const { hiddenToolbarButtons } = this.props.theme;
+
+    if (
+      hiddenToolbarButtons &&
+      hiddenToolbarButtons.marks &&
+      hiddenToolbarButtons.marks[type]
+    )
+      return null;
+
     const isActive = this.hasMark(type);
     const onMouseDown = ev => this.onClickMark(ev, type);
 
@@ -94,7 +104,15 @@ class FormattingToolbar extends React.Component<Props> {
     );
   };
 
-  renderBlockButton = (type: string, IconClass: Function) => {
+  renderBlockButton = (type: Block, IconClass: Function) => {
+    const { hiddenToolbarButtons } = this.props.theme;
+    if (
+      hiddenToolbarButtons &&
+      hiddenToolbarButtons.blocks &&
+      hiddenToolbarButtons.blocks[type]
+    )
+      return null;
+
     const isActive = this.isBlock(type);
     const onMouseDown = ev =>
       this.onClickBlock(ev, isActive ? "paragraph" : type);
