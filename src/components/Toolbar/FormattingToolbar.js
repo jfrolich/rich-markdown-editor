@@ -2,6 +2,7 @@
 import * as React from "react";
 import styled from "react-emotion";
 import { withTheme } from "emotion-theming";
+import type { Theme, Mark, Block } from "../../types";
 import { Editor } from "slate-react";
 import {
   BoldIcon,
@@ -19,7 +20,7 @@ import ToolbarButton from "./ToolbarButton";
 type Props = {
   editor: Editor,
   onCreateLink: (SyntheticEvent<*>) => *,
-  theme: *,
+  theme: Theme,
 };
 
 class FormattingToolbar extends React.Component<Props> {
@@ -90,7 +91,7 @@ class FormattingToolbar extends React.Component<Props> {
     if (
       hiddenToolbarButtons &&
       hiddenToolbarButtons.marks &&
-      hiddenToolbarButtons.marks[type]
+      hiddenToolbarButtons.marks.includes(type)
     )
       return null;
 
@@ -109,7 +110,7 @@ class FormattingToolbar extends React.Component<Props> {
     if (
       hiddenToolbarButtons &&
       hiddenToolbarButtons.blocks &&
-      hiddenToolbarButtons.blocks[type]
+      hiddenToolbarButtons.blocks.includes(type)
     )
       return null;
 
