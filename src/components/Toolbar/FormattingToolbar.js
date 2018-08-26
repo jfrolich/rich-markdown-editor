@@ -2,7 +2,6 @@
 import * as React from "react";
 import styled from "react-emotion";
 import { withTheme } from "emotion-theming";
-import type { Theme, Mark, Block } from "../../types";
 import { Editor } from "slate-react";
 import {
   BoldIcon,
@@ -14,7 +13,7 @@ import {
   LinkIcon,
   StrikethroughIcon,
 } from "outline-icons";
-import type { Mark, Block } from "../../types";
+import type { Theme, Mark, Block } from "../../types";
 import ToolbarButton from "./ToolbarButton";
 
 type Props = {
