@@ -239,12 +239,15 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
     );
   };
 
-  updateSchema = () => {
-    this.prevSchema = this.props.schema;
-    this.schema = {
-      ...defaultSchema,
-      ...(this.props.schema || {}),
-    };
+  getSchema = () => {
+    if (this.prevSchema !== this.props.schema) {
+      this.schema = {
+        ...defaultSchema,
+        ...(this.props.schema || {}),
+      };
+      this.prevSchema = this.props.schema;
+    }
+    return this.schema;
   };
 
   render = () => {
@@ -264,10 +267,6 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
       style,
       dark,
     } = this.props;
-
-    if (this.prevSchema !== this.props.schema) {
-      this.updateSchema();
-    }
 
     const theme = this.props.theme || (dark ? darkTheme : lightTheme);
 
@@ -307,7 +306,7 @@ class RichMarkdownEditor extends React.PureComponent<Props, State> {
               renderPlaceholder={this.renderPlaceholder}
               renderNode={this.renderNode}
               renderMark={renderMark}
-              schema={this.schema}
+              schema={this.getSchema()}
               onKeyDown={this.handleKeyDown}
               onChange={this.handleChange}
               onSave={onSave}
