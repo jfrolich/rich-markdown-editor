@@ -1,24 +1,22 @@
 [![npm version](https://badge.fury.io/js/rich-markdown-editor.svg)](https://badge.fury.io/js/rich-markdown-editor) [![CircleCI](https://img.shields.io/circleci/project/github/outline/rich-markdown-editor.svg)](https://circleci.com/gh/outline/rich-markdown-editor) [![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/outline) [![Formatted with Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
-# rich-markdown-editor
+# rich-markdown-editor (Emotion Fork)
+
+This is the emotion fork of `rich-markdown-editor`. I will try to keep this synced with the versions of the original. If you are using emotion in your app, using this fork will decrease the bundle size as it doesn't need to include styled-components.
 
 A React and [Slate](https://github.com/ianstormtaylor/slate) based editor that powers the [Outline wiki](http://getoutline.com) and can also be used for displaying content in a read-only fashion.
 The editor is WYSIWYG and includes many formatting tools whilst retaining the ability to write markdown
 shortcuts inline and output Markdown.
-
 
 ## Usage
 
 ```javascript
 import Editor from "rich-markdown-editor";
 
-<Editor
-  defaultValue="Hello world!"
-/>
+<Editor defaultValue="Hello world!" />;
 ```
 
 See a working example in the [example directory](/example).
-
 
 ### Props
 
@@ -59,7 +57,6 @@ Allows overriding the inbuilt theme to brand the editor, for example use your ow
 #### `dark`
 
 With `dark` set to `true` the editor will use a default dark theme that's included. See the [source here](/src/theme.js).
-
 
 ### Callbacks
 
@@ -107,8 +104,6 @@ The editor provides an ability to search for links to insert from the formatting
 Triggered when the editor wishes to show a toast message to the user. Hook into your apps
 notification system, or simplisticly use `window.alert(message)`.
 
-
-
 ```javascript
 <Editor
   onSearchLink={async searchTerm => {
@@ -126,7 +121,6 @@ notification system, or simplisticly use `window.alert(message)`.
 
 This callback allows overriding of link handling. It's often the case that you want to have external links open a new window whilst internal links may use something like `react-router` to navigate. If no callback is provided then default behavior will apply to all links. eg:
 
-
 ```javascript
 import { history } from "react-router";
 
@@ -138,7 +132,7 @@ import { history } from "react-router";
       window.location.href = href;
     }
   }}
-/>
+/>;
 ```
 
 #### `renderNode`
@@ -148,8 +142,6 @@ This callback allows overriding of the [inbuilt renderNode](https://github.com/o
 #### `renderPlaceholder`
 
 This callback allows overriding of the [inbuilt renderPlaceholder](https://github.com/outline/rich-markdown-editor/blob/master/src/index.js) – if a callback is provided then it will be used instead of the default implementation. See the [Slate documentation](https://docs.slatejs.org/guides/rendering#placeholders) for an example.
-
-
 
 ## Contributing
 
