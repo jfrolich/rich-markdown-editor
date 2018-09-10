@@ -1,4 +1,7 @@
 // @flow
+
+import type { Theme } from "./types";
+
 const colors = {
   almostBlack: "#181A1B",
   lightBlack: "#2F3336",
@@ -26,7 +29,7 @@ export const base = {
   selected: colors.primary,
 };
 
-export const light = {
+export const light: Theme = {
   ...base,
   background: colors.white,
   text: colors.almostBlack,
@@ -38,6 +41,7 @@ export const light = {
   blockToolbarBackground: colors.greyLight,
   blockToolbarTrigger: colors.greyMid,
   blockToolbarTriggerIcon: colors.white,
+  blockToolbarItem: colors.almostBlack,
 
   quote: colors.greyDark,
   codeBackground: colors.greyLight,
@@ -45,7 +49,7 @@ export const light = {
   horizontalRule: colors.grey,
 };
 
-export const dark = {
+export const dark: Theme = {
   ...base,
   background: colors.almostBlack,
   text: colors.almostWhite,
@@ -57,6 +61,7 @@ export const dark = {
   blockToolbarBackground: colors.white,
   blockToolbarTrigger: colors.almostWhite,
   blockToolbarTriggerIcon: colors.almostBlack,
+  blockToolbarItem: colors.lightBlack,
 
   quote: colors.almostWhite,
   horizontalRule: colors.almostWhite,
