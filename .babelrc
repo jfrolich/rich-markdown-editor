@@ -15,12 +15,6 @@
         "polyfill": false,
         "regenerator": true
       }
-    ],
-    [
-      "module-resolver",
-      {
-        "slate-react": "@jaapfrolich/slate-react"
-      }
     ]
   ]
 }
