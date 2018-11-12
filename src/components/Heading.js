@@ -1,6 +1,6 @@
 // @flow
 import * as React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { Document } from "slate";
 import type { SlateNodeProps } from "../types";
 import headingToSlug from "../lib/headingToSlug";

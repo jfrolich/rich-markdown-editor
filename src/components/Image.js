@@ -1,7 +1,7 @@
 // @flow
 import * as React from "react";
 import ImageZoom from "react-medium-image-zoom";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import type { SlateNodeProps as Props } from "../types";
 
 type State = {

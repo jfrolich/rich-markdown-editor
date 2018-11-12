@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 const Code = props => <code spellCheck={false} {...props} />;
 
 const InlineCode = styled(Code)`

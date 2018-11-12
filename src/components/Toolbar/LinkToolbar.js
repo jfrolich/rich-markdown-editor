@@ -4,7 +4,7 @@ import { findDOMNode } from "react-dom";
 import { Node } from "slate";
 import { Editor, findDOMNode as slateFindDOMNode } from "slate-react";
 import ArrowKeyNavigation from "boundless-arrow-key-navigation/build";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { withTheme } from "emotion-theming";
 import keydown from "react-keydown";
 import { CloseIcon, OpenIcon, TrashIcon } from "outline-icons";

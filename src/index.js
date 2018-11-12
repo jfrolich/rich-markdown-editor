@@ -2,7 +2,7 @@
 import * as React from "react";
 import { Value, Change, Schema, Text } from "slate";
 import { Editor } from "slate-react";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { ThemeProvider } from "emotion-theming";
 import type { SlateNodeProps, Plugin, SearchResult } from "./types";
 import { light as lightTheme, dark as darkTheme } from "./theme";

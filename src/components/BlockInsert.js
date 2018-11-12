@@ -4,7 +4,7 @@ import { Portal } from "react-portal";
 import { Node } from "slate";
 import { Editor, findDOMNode } from "slate-react";
 import { isEqual } from "lodash";
-import styled from "react-emotion";
+import styled from "@emotion/styled";
 import { withTheme } from "emotion-theming";
 import { PlusIcon } from "outline-icons";
 
